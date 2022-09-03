@@ -1,0 +1,16 @@
+.quote-message-component{
+  width: 90%;
+  margin: 10px auto;
+  &__container{
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    background-color: #FFF4CF;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+  }
+}

@@ -1,0 +1,33 @@
+<div class="product-item-component__modal" *ngIf="showModal" (click)="openVideoModal()">
+  <div class="product-item-component__modal__video">
+    <iframe width="560" height="315" [src]="item.safeVideo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<div class="product-item-component">
+  <div class="product-item-component__container">
+    <div class="product-item-component__container__thumb">
+      <img [src]="item.thumb">
+      <div class="product-item-component__container__thumb__information">
+        <div class="product-item-component__container__thumb__information__header">
+          <p class="product-item-component__container__thumb__information__header__group">{{item.group}}</p>
+          <p class="product-item-component__container__thumb__information__header__type">{{item.type}}</p>
+          <p class="product-item-component__container__thumb__information__header__release">{{item.release}}</p>
+        </div>
+        <div class="product-item-component__container__thumb__information__title">
+          {{item.name}}
+        </div>
+        <div class="product-item-component__container__thumb__information__description">
+          {{item.description}}
+        </div>
+        <div class="product-item-component__container__thumb__information__video">
+
+        </div>
+        <div class="product-item-component__container__thumb__information__link">
+          <button (click)="openVideoModal()" class="product-item-component__container__thumb__information__link__youtube"><img src="./assets/img/youtube-logo.svg"></button>
+          <button (click)="callToAction()">EU QUERO</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

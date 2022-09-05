@@ -17,9 +17,21 @@ const routes: Routes = [
     loadChildren: () => import('./sobre/sobre.module').then(m => m.SobreModule)
   },
   {
+    path: 'produtos/:nome',
+    component: PagesComponent,
+    data: {
+      title:"Loja - Um produto especial para você!"
+    },
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+  },
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
+  },
+  {
+    path: "**",
+    redirectTo: '/home',
   }
 ];
 

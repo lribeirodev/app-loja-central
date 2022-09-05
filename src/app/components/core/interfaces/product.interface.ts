@@ -1,6 +1,7 @@
 import { SafeResourceUrl } from "@angular/platform-browser";
 
 export interface IProductItem {
+  select: string;
   thumb: string;
   name: string;
   description: string;

@@ -1,6 +1,14 @@
 <div class="product-container-component">
   <div class="product-container-component__container">
     <app-loading [loadingCheck]="loading"></app-loading>
+    <div class="product-container-component__container__header" *ngIf="!loading">
+      <span class="product-container-component__container__header__part__first">
+        {{productTitle.first}}</span>
+      <span class="product-container-component__container__header__part__second">
+        {{productTitle.second}}</span>
+      <span class="product-container-component__container__header__part__third">
+        {{productTitle.third}}</span>
+    </div>
     <ng-container *ngFor="let item of listItems">
       <app-product-item class="product-container-component__container__item" [item]="item"></app-product-item>
     </ng-container>

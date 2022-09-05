@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
+import { LAMBDA } from "../../core/enum/lambda.enum";
 import { REFRESH_TIME } from "../../core/enum/quote-message.enum";
 import { IQuoteMessage } from "../../core/interfaces/quote-message.interface";
+import { ApiService } from "../../core/service/api.service";
 
 @Component({
   selector: 'app-quote-message',
@@ -15,6 +17,8 @@ export class QuoteMessageComponent implements OnInit {
   subcriberList?: Observable<void>;
   refreshTime : number = REFRESH_TIME.MEDIUM;
 
+  constructor(private service: ApiService){}
+
   ngOnInit(): void {
     this.initObservable();
     this.subcriberList?.subscribe();
@@ -24,20 +28,20 @@ export class QuoteMessageComponent implements OnInit {
 
     this.subcriberList = new Observable<void>(
       obs => {
+
+        this.service.get(LAMBDA.GET_QUOTE_LIST)
+        .subscribe(data => {
+          this.quoteList.push(...data);
+          repeat();
+        })
+
         const repeat = () => {
           setTimeout(() => {
-            if(this.quoteList.length === 0){
-              fetch('./assets/json/quote-message.json')
-              .then(data => data.json())
-              .then(quotes => this.quoteList.push(...quotes))
-            }
             this.quotePrincipal = this.quoteList[Math.floor(Math.random() * this.quoteList.length)];
-
             obs.next();
             repeat();
           },this.quotePrincipal ? this.refreshTime : REFRESH_TIME.FAST);
         };
-        repeat();
         obs.next();
       }
     );

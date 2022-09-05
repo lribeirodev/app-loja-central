@@ -1,0 +1,67 @@
+.product-container-component {
+  &__container {
+    &__header {
+      $breakPointScreen: 500px;
+      $deskFontSize: 30px;
+      $mobileFontSize: 16px;
+
+      display: flex;
+      justify-content: center;
+
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: $deskFontSize;
+
+
+      @media screen and (max-width: $breakPointScreen) {
+        font-size: $mobileFontSize;
+      }
+
+      &__part {
+        // DESKTOP AND MOBILE
+        @keyframes fadeOut {
+          100% {
+            opacity: 1;
+            height: 30px;
+            width: 220px;
+          }
+
+          0% {
+            opacity: 0;
+          }
+        }
+
+        @keyframes fadeOutMobile {
+          100% {
+            opacity: 1;
+            height: 30px;
+            width: 150px;
+          }
+
+          0% {
+            opacity: 0;
+          }
+        }
+
+        &__first {
+          margin-right: 10px;
+        }
+
+        &__second {
+          height: 0px;
+          width: 0px;
+          opacity: 0;
+          display: block;
+          animation: fadeOut reverse 3s;
+          @media screen and (max-width: $breakPointScreen) {
+            animation: fadeOutMobile reverse 3s;
+          }
+        }
+
+        &__third {
+
+        }
+      }
+    }
+  }
+}

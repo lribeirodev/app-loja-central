@@ -1,6 +1,8 @@
-import { Component, Input, OnInit, ViewChild } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Component, OnInit } from "@angular/core";
+import { LAMBDA } from "../../core/enum/lambda.enum";
 import { IProductItem } from "../../core/interfaces/product.interface";
-
+import { ApiService } from "../../core/service/api.service";
 @Component({
   selector: 'app-product-container',
   templateUrl: './product-container.component.html',
@@ -9,18 +11,23 @@ import { IProductItem } from "../../core/interfaces/product.interface";
 export class ProductContainerComponent implements OnInit{
   loading : boolean = true;
   listItems : IProductItem[] = [];
+  productTitle = {
+    first: 'Produtos'.toUpperCase(),
+    second: 'Selecionados'.toUpperCase(),
+    third:  'para Você'.toUpperCase(),
+  };
+
+  constructor(private service: ApiService){}
 
   ngOnInit() {
     this.initConfig();
     }
 
   private initConfig(): void {
-    fetch('./assets/json/products-list.json')
-    .then(data => data.json())
-    .then(products => {
-      this.listItems.push(...products)
+    this.service.get(LAMBDA.GET_PRODUCTS_LIST).subscribe(data => {
+      this.listItems.push(...data);
       this.loading = false;
-    });
+    })
   }
 
 }

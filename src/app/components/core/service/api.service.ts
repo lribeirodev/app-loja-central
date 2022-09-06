@@ -11,10 +11,6 @@ export class ApiService {
   constructor(private http: HttpClient){}
 
   public get(path: string): Observable<any>{
-    return this.http.get(environment.BASE_API.concat(path) + this.getRunMode());
-  }
-
-  private getRunMode(): string{
-    return isDevMode() ? '.json' : '';
+    return this.http.get(environment.BASE_API.concat(path));
   }
 }

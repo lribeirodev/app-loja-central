@@ -1,5 +1,38 @@
 [
   {
+    "select":"SobrancelhasPerfeitas",
+    "thumb":  "./assets/products/sobrancelhas_perfeitas/imagem_1.png",
+    "name": "Sobrancelhas Perfeitas",
+    "description":  "É um curso único! Criado exclusivamente para você que deseja mudar de vida através do design de sobrancelhas. Todas as aulas foram pensadas e desenvolvidas de forma minuciosa para que você aprenda tudo o que eu sei e se torne uma verdadeira especialista em Design de Sobrancelhas, mesmo que esteja começando do zero.",
+    "video":  "FxEYqxh0GMI",
+    "group":  "Mudança de Vida",
+    "release":  2022,
+    "type": "Renda Extra",
+    "link": "https://sosobrancelhas.com/?ref=M74562252T"
+  },
+  {
+    "select":"DesignerUnhas",
+    "thumb":  "./assets/products/escola_design_unhas/imagem_1.png",
+    "name": "Escola Designer de Unhas",
+    "description":  "Primeiro curso de Alongamento de Unhas Avançado, com acesso vitalício e 2 Certificados! Todas as aulas foram pensadas e desenvolvidas de forma minuciosa para que você aprenda tudo e se torne uma verdadeira especialista em Alongamento de Unhas, mesmo que esteja começando do zero.",
+    "video":  "6ggxcAidO28",
+    "group":  "Mudança de Vida",
+    "release":  2022,
+    "type": "Renda Extra",
+    "link": "https://go.hotmart.com/H74563152N"
+  },
+  {
+    "select":"Office",
+    "thumb":  "./assets/products/formacao_office/imagem_1.jpeg",
+    "name": "Formação Pacote Office",
+    "description":  "A Formação Pacote Office prioriza o tempo dos alunos, com videoaulas de no máximo 20 minutos, conteúdo direto, execução passo a passo de todos os módulos e exercícios práticos. Você vai aprender tudo sobre Word, Excel e Power Point Do BÁSICO ao AVANÇADO e com CERTIFICADO RECONHECIDO",
+    "video":  "y4JoMIvfeLM",
+    "group":  "Essencial",
+    "release":  2022,
+    "type": "digital",
+    "link": "https://go.hotmart.com/C74470114W?dp=1"
+  },
+  {
     "select":"AtividadesBiblicas",
     "thumb":  "./assets/products/alfabetinho/atividades_biblicas.png",
     "name": "Atividades Bíblicas",
@@ -20,27 +53,5 @@
     "release":  2022,
     "type": "digital",
     "link": "https://go.hotmart.com/C74470114W?dp=1"
-  },
-  {
-    "select":"SobrancelhasPerfeitas",
-    "thumb":  "./assets/products/sobrancelhas_perfeitas/imagem_1.png",
-    "name": "Sobrancelhas Perfeitas",
-    "description":  "É um curso único! Criado exclusivamente para você que deseja mudar de vida através do design de sobrancelhas. Todas as aulas foram pensadas e desenvolvidas de forma minuciosa para que você aprenda tudo o que eu sei e se torne uma verdadeira especialista em Design de Sobrancelhas, mesmo que esteja começando do zero.",
-    "video":  "FxEYqxh0GMI",
-    "group":  "Mudança de Vida",
-    "release":  2022,
-    "type": "digital",
-    "link": "https://sosobrancelhas.com/?ref=M74562252T"
-  },
-  {
-    "select":"DesignerUnhas",
-    "thumb":  "./assets/products/escola_design_unhas/imagem_1.png",
-    "name": "Sobrancelhas Perfeitas",
-    "description":  "Primeiro curso de Alongamento de Unhas Avançado, com acesso vitalício e 2 Certificados! Todas as aulas foram pensadas e desenvolvidas de forma minuciosa para que você aprenda tudo e se torne uma verdadeira especialista em Alongamento de Unhas, mesmo que esteja começando do zero.",
-    "video":  "6ggxcAidO28",
-    "group":  "Mudança de Vida",
-    "release":  2022,
-    "type": "digital",
-    "link": "https://go.hotmart.com/H74563152N"
   }
 ]

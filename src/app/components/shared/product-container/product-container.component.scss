@@ -12,6 +12,7 @@
       font-family: Georgia, 'Times New Roman', Times, serif;
       font-size: $deskFontSize;
 
+      margin-top: 20px;
 
       @media screen and (max-width: $breakPointScreen) {
         font-size: $mobileFontSize;

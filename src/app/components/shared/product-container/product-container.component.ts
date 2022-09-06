@@ -27,6 +27,10 @@ export class ProductContainerComponent implements OnInit{
     this.initConfig(this.selectProduct);
     }
 
+  get renderSelectProductMessage():boolean{
+    return !!this.selectProduct;
+  }
+
   private initConfig(select: string | null | undefined): void {
     this.service.get(LAMBDA.GET_PRODUCTS_LIST).subscribe(data => {
       this.listItems.push(...data);

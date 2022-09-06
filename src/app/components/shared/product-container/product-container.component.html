@@ -1,7 +1,7 @@
 <div class="product-container-component">
   <div class="product-container-component__container">
     <app-loading [loadingCheck]="loading"></app-loading>
-    <div class="product-container-component__container__header" *ngIf="!loading">
+    <div class="product-container-component__container__header" *ngIf="renderSelectProductMessage">
       <span class="product-container-component__container__header__part__first">
         {{productTitle.first}}</span>
       <span class="product-container-component__container__header__part__second">

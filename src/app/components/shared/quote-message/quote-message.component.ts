@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { Observable } from "rxjs";
 import { LAMBDA } from "../../core/enum/lambda.enum";
 import { REFRESH_TIME } from "../../core/enum/quote-message.enum";
@@ -12,16 +13,20 @@ import { ApiService } from "../../core/service/api.service";
 })
 export class QuoteMessageComponent implements OnInit {
 
+  selectProduct : any;
   quotePrincipal?: IQuoteMessage;
   quoteList: IQuoteMessage[] = [];
   subcriberList?: Observable<void>;
   refreshTime : number = REFRESH_TIME.MEDIUM;
 
-  constructor(private service: ApiService){}
+  constructor(private service: ApiService, private route: ActivatedRoute){ }
 
   ngOnInit(): void {
-    this.initObservable();
-    this.subcriberList?.subscribe();
+    this.selectProduct = this.route.snapshot.paramMap.get('nome') === null;
+    if(this.selectProduct) {
+      this.initObservable();
+      this.subcriberList?.subscribe();
+    }
   }
 
   private initObservable(): void {

@@ -1,6 +1,8 @@
 <div class="product-item-component__modal" *ngIf="showModal" (click)="openVideoModal()">
   <div class="product-item-component__modal__video">
-    <span>X</span><p>clique para fechar</p>
+    <div class="product-item-component__modal__video__header">
+      <p>clique para fechar</p><span>X</span>
+    </div>
     <iframe [src]="item.safeVideo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>

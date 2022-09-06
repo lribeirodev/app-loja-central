@@ -1,7 +1,6 @@
-import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { LAMBDA } from "../../core/enum/lambda.enum";
+import { environment } from "src/environments/environment";
 import { IProductItem } from "../../core/interfaces/product.interface";
 import { ApiService } from "../../core/service/api.service";
 @Component({
@@ -32,7 +31,7 @@ export class ProductContainerComponent implements OnInit{
   }
 
   private initConfig(select: string | null | undefined): void {
-    this.service.get(LAMBDA.GET_PRODUCTS_LIST).subscribe(data => {
+    this.service.get(environment.lambda.GET_PRODUCTS_LIST).subscribe(data => {
       this.listItems.push(...data);
 
       if(select){

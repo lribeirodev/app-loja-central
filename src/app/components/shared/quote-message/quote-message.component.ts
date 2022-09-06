@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Observable } from "rxjs";
-import { LAMBDA } from "../../core/enum/lambda.enum";
+import { environment } from "src/environments/environment";
 import { REFRESH_TIME } from "../../core/enum/quote-message.enum";
 import { IQuoteMessage } from "../../core/interfaces/quote-message.interface";
 import { ApiService } from "../../core/service/api.service";
@@ -34,7 +34,7 @@ export class QuoteMessageComponent implements OnInit {
     this.subcriberList = new Observable<void>(
       obs => {
 
-        this.service.get(LAMBDA.GET_QUOTE_LIST)
+        this.service.get(environment.lambda.GET_QUOTE_LIST)
         .subscribe(data => {
           this.quoteList.push(...data);
           repeat();

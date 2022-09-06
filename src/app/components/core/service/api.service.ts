@@ -1,10 +1,7 @@
-import { Injectable } from "@angular/core";
+import { Injectable, isDevMode } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-
-enum API {
-  BASE_DEV = "https://api.central.app.br/v1/"
-}
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +11,10 @@ export class ApiService {
   constructor(private http: HttpClient){}
 
   public get(path: string): Observable<any>{
-    return this.http.get(API.BASE_DEV.concat(path));
+    return this.http.get(environment.BASE_API.concat(path) + this.getRunMode());
+  }
+
+  private getRunMode(): string{
+    return isDevMode() ? '.json' : '';
   }
 }

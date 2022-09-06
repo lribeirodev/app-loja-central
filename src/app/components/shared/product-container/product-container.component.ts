@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 import { LAMBDA } from "../../core/enum/lambda.enum";
 import { IProductItem } from "../../core/interfaces/product.interface";
 import { ApiService } from "../../core/service/api.service";
@@ -9,6 +10,7 @@ import { ApiService } from "../../core/service/api.service";
   styleUrls: ['./product-container.component.scss']
 })
 export class ProductContainerComponent implements OnInit{
+  selectProduct?: string | null;
   loading : boolean = true;
   listItems : IProductItem[] = [];
   productTitle = {
@@ -17,15 +19,23 @@ export class ProductContainerComponent implements OnInit{
     third:  'para Você'.toUpperCase(),
   };
 
-  constructor(private service: ApiService){}
+  constructor(private service: ApiService, private rote: ActivatedRoute, private router: Router){
+    this.selectProduct = this.rote.snapshot.paramMap.get('nome');
+  }
 
   ngOnInit() {
-    this.initConfig();
+    this.initConfig(this.selectProduct);
     }
 
-  private initConfig(): void {
+  private initConfig(select: string | null | undefined): void {
     this.service.get(LAMBDA.GET_PRODUCTS_LIST).subscribe(data => {
       this.listItems.push(...data);
+
+      if(select){
+        let arr = this.listItems.filter(item => item.select === select);
+        arr.length > 0 ? this.listItems = arr : this.router.navigate(["/home"]);
+      }
+
       this.loading = false;
     })
   }
